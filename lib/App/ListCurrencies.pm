@@ -21,7 +21,7 @@ our $data;
     my $id2alpha  = $Locale::Codes::Data{'currency'}{'id2code'}{'alpha'};
 
     for my $id (keys %$id2names) {
-        push @$data, [$id2alpha->{$id}, $id2names->{$id}[0]];
+        push @$data, [$id, $id2alpha->{$id}, $id2names->{$id}[0]];
     }
 
     $data = [sort {$a->[0] cmp $b->[0]} @$data];
