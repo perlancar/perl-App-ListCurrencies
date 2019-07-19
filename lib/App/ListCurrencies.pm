@@ -21,7 +21,7 @@ our $data;
     my $id2alpha  = $Locale::Codes::Data{'currency'}{'id2code'}{'alpha'};
 
     for my $id (keys %$id2names) {
-        push @$data, [$id, $id2alpha->{$id}, $id2names->{$id}[0]];
+        push @$data, [$id2alpha->{$id}, $id2names->{$id}[0]];
     }
 
     $data = [sort {$a->[0] cmp $b->[0]} @$data];
@@ -34,22 +34,16 @@ my $res = gen_read_table_func(
     table_spec => {
         summary => 'List of currencies',
         fields => {
-            numeric => {
-                summary => 'ISO 4217 numeric code',
-                schema => 'int*',
-                pos => 0,
-                sortable => 1,
-            },
             alpha => {
                 summary => 'ISO 4217 alpha code',
                 schema => 'str*',
-                pos => 1,
+                pos => 0,
                 sortable => 1,
             },
             en_name => {
                 summary => 'English name',
                 schema => 'str*',
-                pos => 2,
+                pos => 1,
                 sortable => 1,
             },
         },
