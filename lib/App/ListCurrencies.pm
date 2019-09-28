@@ -55,6 +55,18 @@ Source data is generated from `Locale::Codes::Currency_Codes`. so make sure you
 have a relatively recent version of the module.
 
 _
+    extra_props => {
+        examples => [
+            {
+                args => {query=>'rup'},
+                test => 0,
+            },
+            {
+                args => {query=>'rup', detail=>1},
+                test => 0,
+            },
+        ],
+    },
 );
 die "Can't generate function: $res->[0] - $res->[1]" unless $res->[0] == 200;
 
