@@ -2,3 +2,4 @@ App-ListCurrencies-*
 .build
 *~
 nytprof*
+.DS_Store
